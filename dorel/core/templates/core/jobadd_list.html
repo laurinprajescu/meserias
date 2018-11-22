@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block main %}
+        <ul>
+            {% for jobadd in object_list %}
+                <li>{{ jobadd }}</li>
+            {% empty %}
+                <li>
+                    No jobadds yet.
+                </li>
+            {% endfor %}
+        </ul>
+        <p>
+            Using https?
+            {{ request.is_secure|yesno }}
+        </p>
+{% endblock %}
